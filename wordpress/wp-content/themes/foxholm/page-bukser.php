@@ -58,7 +58,7 @@ endwhile; // End of the loop.
 		}
 
 		const url = "http://ceciliejasmin.dk/kea/10_eksamensprojekt/foxholm/wordpress/wp-json/wp/v2/buks";
-		const stoerrelseUrl = "http://ceciliejasmin.dk/kea/10_eksamensprojekt/foxholm/wordpress/wp-json/wp/v2/filterstoerrelser";
+		const stoerrelseUrl = "http://ceciliejasmin.dk/kea/10_eksamensprojekt/foxholm/wordpress/wp-json/wp/v2/filterstoerrelse";
 
 		async function getJson() {
 			
