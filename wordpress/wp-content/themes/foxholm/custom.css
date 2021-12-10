@@ -50,6 +50,9 @@ article h5 {
   border-radius: 0;
   font-weight: lighter;
 }
+.wp-block-columns {
+  padding: 2rem;
+}
 
 /*WEB VERSIONEN*/
 
