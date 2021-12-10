@@ -75,6 +75,7 @@ get_header();
         </template>
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
+			<h3>Filtrer efter størrelse:</h3>
             <nav id="filtrering"><button data-buks="alle">Alle</button></nav>
             <section id="buks-oversigt"></section>
         </main><!-- #main -->
