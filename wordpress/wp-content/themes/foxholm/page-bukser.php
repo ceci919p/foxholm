@@ -77,7 +77,7 @@ get_header();
         <main id="main" class="site-main">
 			<h3>Filtrer efter størrelse:</h3>
             <nav id="filtrering"><button data-buks="alle">Alle</button></nav>
-            <section id="buks-oversigt"></section>
+            <section id="oversigt"></section>
         </main><!-- #main -->
         
         <script>
@@ -131,7 +131,7 @@ get_header();
         function visBukser () {
             console.log(bukser);
             
-            const liste = document.querySelector("#buks-oversigt");
+            const liste = document.querySelector("#oversigt");
             const skabelon = document.querySelector("template");
             liste.textContent = "";
             bukser.forEach(buks => {
