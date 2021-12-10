@@ -14,7 +14,7 @@ get_header();
             <article>
                 
                 <img src="" alt="">
-                <p class="titel"></p>
+                <h3 class="titel"></h3>
                 <p class="maerke"></p>
                 <p class="stoerrelse"></p>
                 <p class="pris"></p>
@@ -89,9 +89,9 @@ get_header();
                 const klon = skabelon.cloneNode(true).content;
                 klon.querySelector("img").src = buks.billede.guid;
                 klon.querySelector(".titel").textContent = buks.title.rendered;
-                klon.querySelector(".maerke").textContent = buks.maerke;
-                klon.querySelector(".stoerrelse").textContent = buks.stoerrelse;
-                klon.querySelector(".pris").innerHTML = buks.pris + " kr";
+                klon.querySelector(".maerke").textContent = "Mærke: " + buks.maerke;
+                klon.querySelector(".stoerrelse").textContent = "Størrelse: " + buks.stoerrelse;
+                klon.querySelector(".pris").innerHTML = "Pris: " + buks.pris + " kr";
                 klon.querySelector("article").addEventListener("click", () => {
                     location.href = buks.link; })
                 liste.appendChild(klon);
