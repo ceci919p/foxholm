@@ -76,7 +76,6 @@ get_header();
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
             <nav id="filtrering"><button data-buks="alle">Alle</button></nav>
-            <h1 id="overskrift">Bukser</h1>
             <section id="buks-oversigt"></section>
         </main><!-- #main -->
         
