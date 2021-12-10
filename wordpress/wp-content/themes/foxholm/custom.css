@@ -1,6 +1,20 @@
-/*MOBIL-VERSION*/
+img {
+  height: auto;
+  width: 100%;
+  display: block;
+}
 
-/*WEB-VERSION*/
+main > section {
+  grid-column: 2/3;
+}
+
+main > article {
+  grid-column: 2/3;
+}
+
+.page-header {
+  grid-column: 2/3;
+}
 
 /*MEDIA QUERY*/
 /*@media (min-width: 700px) {}*/
