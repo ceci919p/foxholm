@@ -9,3 +9,7 @@ Author:      Cecilie Joergensen
 #page {
   background-color: white;
 }
+
+.site-description {
+  display: none;
+}
