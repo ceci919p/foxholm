@@ -80,7 +80,7 @@ get_header();
             <div class="produkt_wrapper">
             <nav id="filtrering">
 				<p>Vælg størrelse:</p>
-				<button data-buks="alle">Alle</button>
+				<button data-accessori="alle">Alle</button>
 			</nav>
             <section id="oversigt"></section>
         </div>
@@ -88,32 +88,32 @@ get_header();
         
         <script>
         console.log("Hip Hurra");
-        let bukser;
+        let accessories;
         let stoerrelser;
         //variabel der holder styr på hvilken kategori der er blevet valgt.
-        let filterBuks ="alle";
+        let filterAccessori ="alle";
         document.addEventListener("DOMContentLoaded", start);
         function start() {
             getJson();
         }
-        const url = "https://ceciliejasmin.dk/kea/10_eksamensprojekt/foxholm/wordpress/wp-json/wp/v2/buks";
+        const url = "https://ceciliejasmin.dk/kea/10_eksamensprojekt/foxholm/wordpress/wp-json/wp/v2/accessori";
         const stoerrelseUrl = "https://ceciliejasmin.dk/kea/10_eksamensprojekt/foxholm/wordpress/wp-json/wp/v2/filterstoerrelse";
         async function getJson() {
             
             const data = await fetch(url);
             const stoerrelsedata = await fetch(stoerrelseUrl);
-            bukser = await data.json();
+            accessories = await data.json();
             stoerrelser = await stoerrelsedata.json();
             console.log(stoerrelser);
-            //kald til funktionen visBukser
-            visBukser();
+            //kald til funktionen visAccessories
+            visAccessories();
             //kald til funktionen opretknapper
             opretknapper();
         }
         function opretknapper () {
             stoerrelser.forEach(stoerrelse =>{
                 //lav en funktion der opretter knapper med kategori id som data attribut
-                document.querySelector("#filtrering").innerHTML += `<button class="filter" data-buks="${stoerrelse.name}">${stoerrelse.name}</button>`
+                document.querySelector("#filtrering").innerHTML += `<button class="filter" data-accessori="${stoerrelse.name}">${stoerrelse.name}</button>`
                 
                 addEventListenersToButtons();
             })
@@ -126,32 +126,32 @@ get_header();
         };
         //funktion til filtrering
         function filtrering(){
-            //variablen der holder styr på hvilken kategori der er blevet valgt er let filterBuks.
+            //variablen der holder styr på hvilken kategori der er blevet valgt er let filterAccessori.
             //vi definerer at variblen er den der lige er blevet klikket på med "this". 
             //når vi vil have fat i data-attribut bruges dataset og efterfølgende hvad data-attributten hedder 
-            filterBuks = this.dataset.buks;
-            console.log(filterBuks);
-            visBukser();
+            filterAccessori = this.dataset.accessori;
+            console.log(filterAccessori);
+            visAccessories();
         }
 
-        function visBukser () {
-            console.log(bukser);
+        function visAccessories () {
+            console.log(accessories);
             
             const liste = document.querySelector("#oversigt");
             const skabelon = document.querySelector("template");
             liste.textContent = "";
-            bukser.forEach(buks => {
-                //Hvis arrayet viser tal skal filterBuks også skal laves om til tal. Dette gøres med parseInt() - så det ville hedde (parseInt(filterBuks)). I mit tilfælde havde jeg tekst og derfor skulle filterBuks forblive tekst.
-                console.log(buks.stoerrelse);
-                if (filterBuks == "alle" || buks.stoerrelse.includes(filterBuks)){
+            accessories.forEach(accessori => {
+                //Hvis arrayet viser tal skal filterAccessori også skal laves om til tal. Dette gøres med parseInt() - så det ville hedde (parseInt(filterBuks)). I mit tilfælde havde jeg tekst og derfor skulle filterBuks forblive tekst.
+                console.log(accessori.stoerrelse);
+                if (filterAccessori == "alle" || accessori.stoerrelse.includes(filterAccessori)){
                 const klon = skabelon.cloneNode(true).content;
-                klon.querySelector("img").src = buks.billede.guid;
-                klon.querySelector(".titel").textContent = buks.title.rendered;
-                klon.querySelector(".maerke").textContent = "Mærke: " + buks.maerke;
-                klon.querySelector(".stoerrelse").textContent = "Størrelse: " + buks.stoerrelse;
-                klon.querySelector(".pris").innerHTML = "Pris: " + buks.pris + " kr";
+                klon.querySelector("img").src = accessori.billede.guid;
+                klon.querySelector(".titel").textContent = accessori.title.rendered;
+                klon.querySelector(".maerke").textContent = "Mærke: " + accessori.maerke;
+                klon.querySelector(".stoerrelse").textContent = "Størrelse: " + accessori.stoerrelse;
+                klon.querySelector(".pris").innerHTML = "Pris: " + accessori.pris + " kr";
                 klon.querySelector("article").addEventListener("click", () => {
-                    location.href = buks.link; })
+                    location.href = accessori.link; })
                 liste.appendChild(klon);
                 }
             })
