@@ -141,7 +141,7 @@ get_header();
             const skabelon = document.querySelector("template");
             liste.textContent = "";
             accessories.forEach(accessori => {
-                //Hvis arrayet viser tal skal filterAccessori også skal laves om til tal. Dette gøres med parseInt() - så det ville hedde (parseInt(filterBuks)). I mit tilfælde havde jeg tekst og derfor skulle filterBuks forblive tekst.
+                //Hvis arrayet viser tal skal filterAccessori også skal laves om til tal. Dette gøres med parseInt() - så det ville hedde (parseInt(filterAccessori)). I mit tilfælde havde jeg tekst og derfor skulle filterAccessori forblive tekst.
                 console.log(accessori.stoerrelse);
                 if (filterAccessori == "alle" || accessori.stoerrelse.includes(filterAccessori)){
                 const klon = skabelon.cloneNode(true).content;
