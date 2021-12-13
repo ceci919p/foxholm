@@ -51,9 +51,9 @@ article h5 {
   font-weight: lighter;
 }
 .wp-block-columns {
-  padding: 2vw;
+  padding: 1vw;
 }
-.wp-block-column has-background {
+.wp-block-column {
   padding: 2vw;
 }
 /* .nv-content-wrap > div:nth-child(2) > div:nth-child(1) {
