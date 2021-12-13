@@ -73,6 +73,12 @@ h1 {
   font-family: Bebas Neue;
 }
 
+.wp-image-364,
+.wp-image-371,
+.wp-image-370 {
+  height: 60px;
+  width: auto;
+}
 /*WEB VERSIONEN*/
 
 @media (min-width: 700px) {
