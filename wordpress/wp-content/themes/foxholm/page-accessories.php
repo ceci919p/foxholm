@@ -69,7 +69,6 @@ get_header();
                 <h5 class="titel"></h5>
                 <div class="article_text">
                 <p class="maerke"></p>
-                <p class="stoerrelse"></p>
                 <p class="pris"></p>
                 <div>
                 
@@ -79,7 +78,7 @@ get_header();
         <main id="main" class="site-main">
             <div class="produkt_wrapper">
             <nav id="filtrering">
-				<p>Vælg størrelse:</p>
+				<p>Vælg kategori:</p>
 				<button data-accessori="alle">Alle</button>
 			</nav>
             <section id="oversigt"></section>
@@ -89,31 +88,31 @@ get_header();
         <script>
         console.log("Hip Hurra");
         let accessories;
-        let stoerrelser;
+        let filteraccessories;
         //variabel der holder styr på hvilken kategori der er blevet valgt.
-        let filterAccessori ="alle";
+        let filtrerAccessori = "alle";
         document.addEventListener("DOMContentLoaded", start);
         function start() {
             getJson();
         }
         const url = "https://ceciliejasmin.dk/kea/10_eksamensprojekt/foxholm/wordpress/wp-json/wp/v2/accessori";
-        const stoerrelseUrl = "https://ceciliejasmin.dk/kea/10_eksamensprojekt/foxholm/wordpress/wp-json/wp/v2/filterstoerrelse";
+        const filteraccessoriUrl = "https://ceciliejasmin.dk/kea/10_eksamensprojekt/foxholm/wordpress/wp-json/wp/v2/filteraccessories";
         async function getJson() {
             
             const data = await fetch(url);
-            const stoerrelsedata = await fetch(stoerrelseUrl);
+            const filteraccessoridata = await fetch(filteraccessoriUrl);
             accessories = await data.json();
-            stoerrelser = await stoerrelsedata.json();
-            console.log(stoerrelser);
+             = await filteraccessoridata.json();
+            console.log(filteraccessories);
             //kald til funktionen visAccessories
             visAccessories();
             //kald til funktionen opretknapper
             opretknapper();
         }
         function opretknapper () {
-            stoerrelser.forEach(stoerrelse =>{
+            filteraccessories.forEach(filteraccessori =>{
                 //lav en funktion der opretter knapper med kategori id som data attribut
-                document.querySelector("#filtrering").innerHTML += `<button class="filter" data-accessori="${stoerrelse.name}">${stoerrelse.name}</button>`
+                document.querySelector("#filtrering").innerHTML += `<button class="filter" data-accessori="${filteraccessori.name}">${filteraccessori.name}</button>`
                 
                 addEventListenersToButtons();
             })
@@ -129,8 +128,8 @@ get_header();
             //variablen der holder styr på hvilken kategori der er blevet valgt er let filterAccessori.
             //vi definerer at variblen er den der lige er blevet klikket på med "this". 
             //når vi vil have fat i data-attribut bruges dataset og efterfølgende hvad data-attributten hedder 
-            filterAccessori = this.dataset.accessori;
-            console.log(filterAccessori);
+            filtrerAccessori = this.dataset.accessori;
+            console.log(filtrerAccessori);
             visAccessories();
         }
 
@@ -142,13 +141,12 @@ get_header();
             liste.textContent = "";
             accessories.forEach(accessori => {
                 //Hvis arrayet viser tal skal filterAccessori også skal laves om til tal. Dette gøres med parseInt() - så det ville hedde (parseInt(filterAccessori)). I mit tilfælde havde jeg tekst og derfor skulle filterAccessori forblive tekst.
-                console.log(accessori.stoerrelse);
-                if (filterAccessori == "alle" || accessori.stoerrelse.includes(filterAccessori)){
+                console.log(accessori.filteraccessori);
+                if (filtrerAccessori == "alle" || accessori.filteraccessori.includes(filtrerAccessori)){
                 const klon = skabelon.cloneNode(true).content;
                 klon.querySelector("img").src = accessori.billede.guid;
                 klon.querySelector(".titel").textContent = accessori.title.rendered;
                 klon.querySelector(".maerke").textContent = "Mærke: " + accessori.maerke;
-                klon.querySelector(".stoerrelse").textContent = "Størrelse: " + accessori.stoerrelse;
                 klon.querySelector(".pris").innerHTML = "Pris: " + accessori.pris + " kr";
                 klon.querySelector("article").addEventListener("click", () => {
                     location.href = accessori.link; })

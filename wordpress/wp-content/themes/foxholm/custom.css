@@ -79,6 +79,20 @@ h1 {
   height: 60px;
   width: auto;
 }
+
+.wp-image-388,
+.wp-image-391 {
+  height: 40px;
+  width: auto;
+}
+.wp-image-393 {
+  height: 50px;
+  width: auto;
+}
+.wp-image-390 {
+  height: 25px;
+  width: auto;
+}
 /*WEB VERSIONEN*/
 
 @media (min-width: 700px) {
