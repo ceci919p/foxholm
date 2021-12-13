@@ -69,6 +69,9 @@ p.has-text-align-left:nth-child(2) {
 div.wp-block-columns:nth-child(3) > div:nth-child(1) > h2:nth-child(1) {
   padding: 2rem;
 } */
+h1 {
+  font-family: Bebas Neue;
+}
 
 /*WEB VERSIONEN*/
 
