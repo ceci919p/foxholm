@@ -53,7 +53,7 @@ article h5 {
 /* .wp-block-columns {
   padding: 1vw;
 } */
-.wp-block-column {
+.wp-block-column.has-background {
   padding: 2vw;
 }
 /* .nv-content-wrap > div:nth-child(2) > div:nth-child(1) {
