@@ -50,9 +50,9 @@ article h5 {
   border-radius: 0;
   font-weight: lighter;
 }
-.wp-block-columns {
+/* .wp-block-columns {
   padding: 1vw;
-}
+} */
 .wp-block-column {
   padding: 2vw;
 }
