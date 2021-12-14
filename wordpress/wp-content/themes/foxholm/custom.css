@@ -144,4 +144,9 @@ h1 {
     width: 400px;
     height: 400px;
   }
+
+  .single-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
