@@ -44,7 +44,7 @@ article h5 {
   background-color: white;
   border: solid black 1px;
   color: black;
-  width: 100px;
+  width: 150px;
   margin: 0.2rem;
   padding: 0;
   border-radius: 0;
@@ -93,6 +93,10 @@ h1 {
   height: 25px;
   width: auto;
 }
+.wp-image-400 {
+  width: 180px;
+  height: auto;
+}
 /*WEB VERSIONEN*/
 
 @media (min-width: 700px) {
@@ -109,6 +113,7 @@ h1 {
   .produkt_wrapper {
     display: grid;
     grid-template-columns: 0.5fr 4fr;
+    grid-gap: 1rem;
   }
 
   #filtrering {

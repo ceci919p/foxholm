@@ -88,31 +88,31 @@ get_header();
         <script>
         console.log("Hip Hurra");
         let accessories;
-        let filteraccessories;
+        let kategorier;
         //variabel der holder styr på hvilken kategori der er blevet valgt.
-        let filtrerAccessori = "alle";
+        let filterAccessori = "alle";
         document.addEventListener("DOMContentLoaded", start);
         function start() {
             getJson();
         }
         const url = "https://ceciliejasmin.dk/kea/10_eksamensprojekt/foxholm/wordpress/wp-json/wp/v2/accessori";
-        const filteraccessoriUrl = "https://ceciliejasmin.dk/kea/10_eksamensprojekt/foxholm/wordpress/wp-json/wp/v2/filteraccessories";
+        const kategoriUrl = "https://ceciliejasmin.dk/kea/10_eksamensprojekt/foxholm/wordpress/wp-json/wp/v2/filteraccessori";
         async function getJson() {
             
             const data = await fetch(url);
-            const filteraccessoridata = await fetch(filteraccessoriUrl);
+            const kategoridata = await fetch(kategoriUrl);
             accessories = await data.json();
-             = await filteraccessoridata.json();
-            console.log(filteraccessories);
+            kategorier = await kategoridata.json();
+            console.log(kategorier);
             //kald til funktionen visAccessories
             visAccessories();
             //kald til funktionen opretknapper
             opretknapper();
         }
         function opretknapper () {
-            filteraccessories.forEach(filteraccessori =>{
+            kategorier.forEach(kategori =>{
                 //lav en funktion der opretter knapper med kategori id som data attribut
-                document.querySelector("#filtrering").innerHTML += `<button class="filter" data-accessori="${filteraccessori.name}">${filteraccessori.name}</button>`
+                document.querySelector("#filtrering").innerHTML += `<button class="filter" data-accessori="${kategori.name}">${kategori.name}</button>`
                 
                 addEventListenersToButtons();
             })
@@ -128,8 +128,8 @@ get_header();
             //variablen der holder styr på hvilken kategori der er blevet valgt er let filterAccessori.
             //vi definerer at variblen er den der lige er blevet klikket på med "this". 
             //når vi vil have fat i data-attribut bruges dataset og efterfølgende hvad data-attributten hedder 
-            filtrerAccessori = this.dataset.accessori;
-            console.log(filtrerAccessori);
+            filterAccessori = this.dataset.accessori;
+            console.log(filterAccessori);
             visAccessories();
         }
 
@@ -141,8 +141,8 @@ get_header();
             liste.textContent = "";
             accessories.forEach(accessori => {
                 //Hvis arrayet viser tal skal filterAccessori også skal laves om til tal. Dette gøres med parseInt() - så det ville hedde (parseInt(filterAccessori)). I mit tilfælde havde jeg tekst og derfor skulle filterAccessori forblive tekst.
-                console.log(accessori.filteraccessori);
-                if (filtrerAccessori == "alle" || accessori.filteraccessori.includes(filtrerAccessori)){
+                console.log(accessori.kategori);
+                if (filterAccessori == "alle" || accessori.kategori.includes(filterAccessori)){
                 const klon = skabelon.cloneNode(true).content;
                 klon.querySelector("img").src = accessori.billede.guid;
                 klon.querySelector(".titel").textContent = accessori.title.rendered;
