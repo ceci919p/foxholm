@@ -37,7 +37,7 @@ get_header();
 		<script>
 			let buks;
 
-			const url = "https://ceciliejasmin.dk/kea/10_eksamensprojekt/foxholm/wordpress/wp-json/wp/v2/buks"+<?php echo get_the_ID() ?>;
+			const url = "https://ceciliejasmin.dk/kea/10_eksamensprojekt/foxholm/wordpress/wp-json/wp/v2/buks/"+<?php echo get_the_ID() ?>;
 
 			async function getJson() {
 			const data = await fetch(url);
