@@ -124,6 +124,10 @@ h1 {
 /*WEB VERSIONEN*/
 
 @media (min-width: 700px) {
+  .info_banner {
+    background-color: black;
+  }
+
   .site-main {
     padding: 1rem;
   }
