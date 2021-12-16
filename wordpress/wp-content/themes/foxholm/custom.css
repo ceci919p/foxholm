@@ -43,9 +43,7 @@ article h5 {
   background-color: #164153;
   color: white;
 }
-/* .article_text .stoerrelse {
-  text-transform: uppercase;
-} */
+
 #filtrering button {
   background-color: white;
   border: solid black 1px;
@@ -72,26 +70,15 @@ button:hover {
   border: solid #164153 1px;
   background-color: #164153;
 }
-
-/* .wp-block-columns {
-  padding: 1vw;
-} */
 .wp-block-column.has-background {
   padding: 2vw;
 }
-/* .nv-content-wrap > div:nth-child(2) > div:nth-child(1) {
-  padding: 2.5rem;
-} */
+
 p.has-text-align-left:nth-child(2) {
   display: flex;
   justify-content: right;
 }
-/* div.wp-block-columns:nth-child(3) > div:nth-child(1) {
-  padding: 1rem;
-}
-div.wp-block-columns:nth-child(3) > div:nth-child(1) > h2:nth-child(1) {
-  padding: 2rem;
-} */
+
 h1 {
   font-family: Bebas Neue;
 }
