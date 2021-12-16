@@ -130,6 +130,12 @@ get_header();
             //vi definerer at variblen er den der lige er blevet klikket på med "this". 
             //når vi vil have fat i data-attribut bruges dataset og efterfølgende hvad data-attributten hedder 
             filterOvertoej = this.dataset.overtoej;
+             document.querySelectorAll("#filtrering .filter").forEach(elm => {
+
+                elm.classList.remove("valgt");
+
+            });
+            this.classList.add("valgt");
             console.log(filterOvertoej);
             visOvertoejflertal();
         }

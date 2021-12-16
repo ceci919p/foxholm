@@ -35,7 +35,11 @@ article h5 {
 .article_text {
   margin-bottom: 4rem;
 }
-.valgt {
+#filtrering_lowercase .valgt {
+  background-color: #164153;
+  color: white;
+}
+#filtrering .valgt {
   background-color: #164153;
   color: white;
 }

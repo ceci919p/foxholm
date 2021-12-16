@@ -130,6 +130,12 @@ get_header();
             //vi definerer at variblen er den der lige er blevet klikket på med "this". 
             //når vi vil have fat i data-attribut bruges dataset og efterfølgende hvad data-attributten hedder 
             filterBaumtroeje = this.dataset.baumtroeje;
+            document.querySelectorAll("#filtrering_lowercase .filter").forEach(elm => {
+
+                elm.classList.remove("valgt");
+
+            });
+            this.classList.add("valgt");
             console.log(filterBaumtroeje);
             visBaumtroejer();
         }
