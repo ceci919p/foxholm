@@ -142,7 +142,8 @@ get_header();
             liste.textContent = "";
             bukser.forEach(buks => {
                 //Hvis arrayet viser tal skal filterBuks også skal laves om til tal. Dette gøres med parseInt() - så det ville hedde (parseInt(filterBuks)). I mit tilfælde havde jeg tekst og derfor skulle filterBuks forblive tekst.
-                console.log(buks.stoerrelse);
+                console.log("filterBuks " + filterBuks);
+                console.log("buks.stoerrelse " + buks.stoerrelse);
                 if (filterBuks == "alle" || buks.stoerrelse.includes(filterBuks)){
                 const klon = skabelon.cloneNode(true).content;
                 klon.querySelector("img").src = buks.billede.guid;

@@ -35,7 +35,13 @@ article h5 {
 .article_text {
   margin-bottom: 4rem;
 }
-
+.valgt {
+  background-color: #164153;
+  color: white;
+}
+/* .article_text .stoerrelse {
+  text-transform: uppercase;
+} */
 #filtrering button {
   background-color: white;
   border: solid black 1px;
@@ -45,7 +51,24 @@ article h5 {
   padding: 0;
   border-radius: 0;
   font-weight: lighter;
+  text-transform: uppercase;
 }
+#filtrering_lowercase button {
+  background-color: white;
+  border: solid black 1px;
+  color: black;
+  width: 150px;
+  margin: 0.2rem;
+  padding: 0;
+  border-radius: 0;
+  font-weight: lighter;
+}
+
+button:hover {
+  border: solid #164153 1px;
+  background-color: #164153;
+}
+
 /* .wp-block-columns {
   padding: 1vw;
 } */
@@ -113,12 +136,16 @@ h1 {
   text-align: center;
 }
 
-.button_wrapper button {
+.button_wrapper .koeb {
   padding: 0.5rem;
   width: 100%;
   border-radius: 0;
   background-color: #164153;
+  color: white;
   margin-top: 3rem;
+  border: none;
+  font-family: Montserrat;
+  font-weight: bold;
 }
 
 /*WEB VERSIONEN*/
@@ -190,7 +217,7 @@ h1 {
     text-align: end;
   }
 
-  .button_wrapper button {
+  .button_wrapper .koeb {
     width: 40%;
   }
 }

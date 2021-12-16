@@ -42,7 +42,7 @@ get_header();
 						<p class="materiale"></p>
 						
 						<div class="button_wrapper">
-						<button>KØB</button>
+						<button class="koeb">KØB</button>
 					    </div>
 					</div>
 				</div>
@@ -68,7 +68,6 @@ get_header();
 			document.querySelector(".pic").src = accessori.billede.guid;
 			document.querySelector(".pris").innerHTML = "Pris:  " + accessori.pris + " kr";
 			document.querySelector(".maerke").innerHTML = "Mærke:  " + accessori.maerke;
-			document.querySelector(".stoerrelse").innerHTML = "Størrelse:  " + accessori.stoerrelse;
 			document.querySelector(".materiale").innerHTML = "Materiale:  " + accessori.materiale;
 		}
 

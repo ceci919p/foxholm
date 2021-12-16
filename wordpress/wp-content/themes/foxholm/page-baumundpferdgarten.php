@@ -78,7 +78,7 @@ get_header();
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
             <div class="produkt_wrapper">
-            <nav id="filtrering">
+            <nav id="filtrering_lowercase">
 				<p>Vælg størrelse:</p>
 				<button data-baumtroeje="alle">Alle</button>
 			</nav>
@@ -113,14 +113,14 @@ get_header();
         function opretknapper () {
             kategorier.forEach(kategori =>{
                 //lav en funktion der opretter knapper med kategori id som data attribut
-                document.querySelector("#filtrering").innerHTML += `<button class="filter" data-baumtroeje="${kategori.name}">${kategori.name}</button>`
+                document.querySelector("#filtrering_lowercase").innerHTML += `<button class="filter" data-baumtroeje="${kategori.name}">${kategori.name}</button>`
                 
                 addEventListenersToButtons();
             })
         }
         function addEventListenersToButtons(){
             //vælg alle filtreringsknapper og for hvert element skal der tilføjes en EventListener.
-            document.querySelectorAll("#filtrering button").forEach(elm =>{
+            document.querySelectorAll("#filtrering_lowercase button").forEach(elm =>{
                 elm.addEventListener("click", filtrering);
             })
         };

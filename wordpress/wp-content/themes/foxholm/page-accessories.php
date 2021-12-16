@@ -77,7 +77,7 @@ get_header();
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
             <div class="produkt_wrapper">
-            <nav id="filtrering">
+            <nav id="filtrering_lowercase">
 				<p>Vælg kategori:</p>
 				<button data-accessori="alle">Alle</button>
 			</nav>
@@ -112,14 +112,14 @@ get_header();
         function opretknapper () {
             kategorier.forEach(kategori =>{
                 //lav en funktion der opretter knapper med kategori id som data attribut
-                document.querySelector("#filtrering").innerHTML += `<button class="filter" data-accessori="${kategori.name}">${kategori.name}</button>`
+                document.querySelector("#filtrering_lowercase").innerHTML += `<button class="filter" data-accessori="${kategori.name}">${kategori.name}</button>`
                 
                 addEventListenersToButtons();
             })
         }
         function addEventListenersToButtons(){
             //vælg alle filtreringsknapper og for hvert element skal der tilføjes en EventListener.
-            document.querySelectorAll("#filtrering button").forEach(elm =>{
+            document.querySelectorAll("#filtrering_lowercase button").forEach(elm =>{
                 elm.addEventListener("click", filtrering);
             })
         };
@@ -129,7 +129,13 @@ get_header();
             //vi definerer at variblen er den der lige er blevet klikket på med "this". 
             //når vi vil have fat i data-attribut bruges dataset og efterfølgende hvad data-attributten hedder 
             filterAccessori = this.dataset.accessori;
-            console.log(filterAccessori);
+            document.querySelectorAll("#filtrering_lowercase .filter").forEach(elm => {
+
+                elm.classList.remove("valgt");
+
+            });
+            this.classList.add("valgt");
+            console.log("hej " + filterAccessori);
             visAccessories();
         }
 
