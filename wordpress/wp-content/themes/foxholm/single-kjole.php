@@ -42,7 +42,7 @@ get_header();
 						<p class="materiale"></p>
 						
 						<div class="button_wrapper">
-						<button>KØB</button>
+						<button class="koeb">KØB</button>
 					    </div>
 					</div>
 				</div>
