@@ -35,15 +35,19 @@ article h5 {
 .article_text {
   margin-bottom: 4rem;
 }
+
+/*Vores valgt funktion i filtermenuen til accesories/mærke*/
 #filtrering_lowercase .valgt {
   background-color: #164153;
   color: white;
 }
+/*Vores valgt funktion i filtermenuen til tøj/sko*/
 #filtrering .valgt {
   background-color: #164153;
   color: white;
 }
 
+/*Vores filter knapper til tøj/sko*/
 #filtrering button {
   background-color: white;
   border: solid black 1px;
@@ -55,6 +59,8 @@ article h5 {
   font-weight: lighter;
   text-transform: uppercase;
 }
+
+/*Vores filter knapper til accesories/mærke*/
 #filtrering_lowercase button {
   background-color: white;
   border: solid black 1px;
