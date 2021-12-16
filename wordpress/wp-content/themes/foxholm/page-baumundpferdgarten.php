@@ -96,8 +96,8 @@ get_header();
         function start() {
             getJson();
         }
-        const url = "https://ceciliejasmin.dk/kea/10_eksamensprojekt/foxholm/wordpress/wp-json/wp/v2/baumtroeje";
-        const stoerrelseUrl = "https://ceciliejasmin.dk/kea/10_eksamensprojekt/foxholm/wordpress/wp-json/wp/v2/filterstoerrelse";
+        const url = "https://ceciliejasmin.dk/kea/10_eksamensprojekt/foxholm/wordpress/wp-json/wp/v2/baumtroeje/";
+        const stoerrelseUrl = "https://ceciliejasmin.dk/kea/10_eksamensprojekt/foxholm/wordpress/wp-json/wp/v2/filterstoerrelse/";
         async function getJson() {
             
             const data = await fetch(url);
@@ -146,6 +146,7 @@ get_header();
                 if (filterBaumtroeje == "alle" || baumtroeje.stoerrelse.includes(filterBaumtroeje)){
                 const klon = skabelon.cloneNode(true).content;
                 klon.querySelector("img").src = baumtroeje.billede.guid;
+                klon.querySelector(".titel").textContent = baumtroeje.title.rendered;
                 klon.querySelector(".stoerrelse").textContent = "Størrelse: " + baumtroeje.stoerrelse;
                 klon.querySelector(".pris").innerHTML = "Pris: " + baumtroeje.pris + " kr";
                 klon.querySelector("article").addEventListener("click", () => {
