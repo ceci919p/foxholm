@@ -89,7 +89,7 @@ get_header();
         <script>
         console.log("Hip Hurra");
         let baumtroejer;
-        let stoerrelser;
+        let kategorier;
         //variabel der holder styr på hvilken kategori der er blevet valgt.
         let filterBaumtroeje ="alle";
         document.addEventListener("DOMContentLoaded", start);
@@ -97,23 +97,23 @@ get_header();
             getJson();
         }
         const url = "https://ceciliejasmin.dk/kea/10_eksamensprojekt/foxholm/wordpress/wp-json/wp/v2/baumtroeje/";
-        const stoerrelseUrl = "https://ceciliejasmin.dk/kea/10_eksamensprojekt/foxholm/wordpress/wp-json/wp/v2/filterstoerrelse/";
+        const kategoriUrl = "https://ceciliejasmin.dk/kea/10_eksamensprojekt/foxholm/wordpress/wp-json/wp/v2/shoppingkategorier/";
         async function getJson() {
             
             const data = await fetch(url);
-            const stoerrelsedata = await fetch(stoerrelseUrl);
+            const kategoridata = await fetch(kategoriUrl);
             baumtroejer = await data.json();
-            stoerrelser = await stoerrelsedata.json();
-            console.log(stoerrelser);
+            kategorier = await kategoridata.json();
+            console.log(kategorier);
             //kald til funktionen visBaumtroejer
             visBaumtroejer();
             //kald til funktionen opretknapper
             opretknapper();
         }
         function opretknapper () {
-            stoerrelser.forEach(stoerrelse =>{
+            kategorier.forEach(kategori =>{
                 //lav en funktion der opretter knapper med kategori id som data attribut
-                document.querySelector("#filtrering").innerHTML += `<button class="filter" data-baumtroeje="${stoerrelse.name}">${stoerrelse.name}</button>`
+                document.querySelector("#filtrering").innerHTML += `<button class="filter" data-baumtroeje="${kategori.name}">${kategori.name}</button>`
                 
                 addEventListenersToButtons();
             })
@@ -142,8 +142,8 @@ get_header();
             liste.textContent = "";
             baumtroejer.forEach(baumtroeje => {
                 //Hvis arrayet viser tal skal filterBaumtroeje også skal laves om til tal. Dette gøres med parseInt() - så det ville hedde (parseInt(filterBaumtroeje)). I mit tilfælde havde jeg tekst og derfor skulle filterBuks forblive tekst.
-                console.log(baumtroeje.stoerrelse);
-                if (filterBaumtroeje == "alle" || baumtroeje.stoerrelse.includes(filterBaumtroeje)){
+                console.log(baumtroeje.kategori);
+                if (filterBaumtroeje == "alle" || baumtroeje.kategori.includes(filterBaumtroeje)){
                 const klon = skabelon.cloneNode(true).content;
                 klon.querySelector("img").src = baumtroeje.billede.guid;
                 klon.querySelector(".titel").textContent = baumtroeje.title.rendered;
