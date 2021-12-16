@@ -79,7 +79,7 @@ get_header();
         <main id="main" class="site-main">
             <div class="produkt_wrapper">
             <nav id="filtrering">
-				<p>Vælg størrelse:</p>
+				<p>Vælg kategori:</p>
 				<button data-baumtroeje="alle">Alle</button>
 			</nav>
             <section id="oversigt"></section>
