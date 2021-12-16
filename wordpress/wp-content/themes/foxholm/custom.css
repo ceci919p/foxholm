@@ -87,6 +87,11 @@ p.has-text-align-left:nth-child(2) {
 
 h1 {
   font-family: Bebas Neue;
+  color: #164153;
+}
+.home.page-template-default.page.page-id-243 h1 {
+  text-align: center;
+  color: #164153;
 }
 
 .wp-image-364,
