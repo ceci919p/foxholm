@@ -80,7 +80,7 @@ get_header();
             <div class="produkt_wrapper">
             <nav id="filtrering">
 				<p>Vælg størrelse:</p>
-				<button data-kjole="alle">Alle</button>
+				<button class="filter" data-kjole="alle">Alle</button>
 			</nav>
             <section id="oversigt"></section>
         </div>

@@ -80,7 +80,7 @@ get_header();
             <div class="produkt_wrapper">
             <nav id="filtrering_lowercase">
 				<p>Vælg kategori:</p>
-				<button data-baumtroeje="alle">Alle</button>
+				<button class="filter" data-baumtroeje="alle">Alle</button>
 			</nav>
             <section id="oversigt"></section>
         </div>
