@@ -62,7 +62,7 @@ get_header();
 		<?php do_action( 'neve_do_sidebar', 'single-page', 'right' ); ?>
 	</div>
 </div>
-<template>
+    <template>
             <article>
                 
                 <img src="" alt="">
@@ -72,9 +72,8 @@ get_header();
                 <p class="stoerrelse"></p>
                 <p class="pris"></p>
                 <div>
-                
             </article>
-        </template>
+    </template>
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
             <div class="produkt_wrapper">
